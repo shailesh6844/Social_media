@@ -1,4 +1,4 @@
-create virtual environment: conda create -p plagarism python==3.10 -y
+create virtual environment: conda create -p social_media python==3.10 -y
 
 check your environment conda env list
 
