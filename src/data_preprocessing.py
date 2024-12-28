@@ -34,6 +34,7 @@ def preprocess_data(social_media_dataframe):
 
 
 if __name__ == '__main__':
-    data_path= '/Users/sachinmishra/Desktop/Social_media/Data/social_media_engagement_data.csv'
+    data_path= r'C:/Users/shailesh shinde/Desktop/Social_media/Data/social_media_engagement_data.csv'
     social_media_dataframe= read_social_media_data(data_path)
     linkedin_data = preprocess_data(social_media_dataframe)
+    print(linkedin_data.columns)

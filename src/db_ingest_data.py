@@ -1,5 +1,5 @@
 import mysql.connector
-from data_preprocessing import preprocess_data,read_social_media_data
+from src.data_preprocessing import preprocess_data,read_social_media_data
 
 # Database connection
 def get_db_connection(hots,database,user,password):
@@ -17,12 +17,15 @@ def create_table(host,database,user,password,table_name,columns):
         cursor = conn.cursor()
 
         # Generate column definitions string from the columns dictionary
-        column_definitions = ", ".join([f"{col} {dtype}" for col, dtype in columns.items()])
+        column_definitions = ", ".join([f"`{col}`{dtype}" for col, dtype in columns.items()])
+        print("*****")
+        
         print(column_definitions)
+        print("#####")
 
         # Create the SQL query
         query = f"""
-        CREATE TABLE IF NOT EXISTS {table_name} (
+        CREATE TABLE IF NOT EXISTS `{table_name}` (
             {column_definitions}
         );
         """
@@ -67,15 +70,15 @@ if __name__ == "__main__":
     password= 'password'
     table_name= 'x'
     columns = {
-            "MatricsID": "INT PRIMARY KEY",
-            "Like": "INT",
-            "Comment": "INT",
-            "Share": "INT",
+            "Matrics_ID": "INT PRIMARY KEY",
+            "Likes": "INT",
+            "Comments": "INT",
+            "Shares": "INT",
             "Reach": "INT",
             "Engagement_Rate": "INT",
             "Audience_Age": "INT",
             "Post_Type": "VARCHAR(255)",
-            "Platform_Name": "VARCHAR(255)"
+            "Platform": "VARCHAR(255)"
         }
     
     # Insert data into Matrics table
