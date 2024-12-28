@@ -1,4 +1,0 @@
-pandas
-uuid
-python-dotenv
-mysql-connector-python
