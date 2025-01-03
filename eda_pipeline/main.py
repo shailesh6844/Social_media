@@ -13,7 +13,7 @@ if __name__ == '__main__':
     password= os.getenv('PASSWORD')
     connection= connect_to_db(host,database,user,password)
     tables = ['Matrics', 'Audience', 'Platform', 'Post']
-    fetch_table_schema(conn,tables)
+    fetch_table_schema(connection,tables)
 
     tables = ['Matrics', 'Audience', 'Platform', 'Post']
     post_columns = ['Post_Type']

@@ -30,6 +30,7 @@ def fetch_table_schema(connection, tables):
             print(column)
         print("\n")
 
+# Function to read data from the database
 def read_sql_data(connection):
     query = "SELECT Likes, Comments, Shares, Reach, Engagement_Rate FROM Matrics;"
     datframe = pd.read_sql(query, connection)
