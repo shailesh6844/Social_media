@@ -1,4 +1,6 @@
 pandas
 uuid
 python-dotenv
-mysql-connector-pytho
+mysql-connector-python
+ydata-profiling
+pymysql
