@@ -1,4 +1,7 @@
 pandas
 uuid
 python-dotenv
-mysql-connector-pytho
+mysql-connector-python
+pymysql
+seaborn
+matplotlib
