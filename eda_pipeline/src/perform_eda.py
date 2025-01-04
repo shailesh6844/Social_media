@@ -2,7 +2,7 @@ import pymysql
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from read_data_database import connect_to_db,read_sql_data
+from src.read_data_database import connect_to_db,read_sql_data
 from dotenv import load_dotenv
 import os
 
