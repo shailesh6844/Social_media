@@ -6,6 +6,8 @@ import pandas as pd
 # Function to connect to the database
 def connect_to_db(hots,database,user,password):
     try:
+
+        # Attempt to connect to the database
         conn = pymysql.connect(
             host=hots,
             database=database,
@@ -20,6 +22,14 @@ def connect_to_db(hots,database,user,password):
     
 # Function to fetch table schemas
 def fetch_table_schema(connection, tables):
+
+    """
+    Retrieve and print the schema of each table in the provided list.
+
+    Args:
+        connection (pymysql.connections.Connection): The database connection object.
+        tables (list): List of table names whose schemas need to be fetched.
+    """
     for table in tables:
         print(f"Schema of {table} table:")
         query = f"DESCRIBE {table};"
@@ -30,11 +40,23 @@ def fetch_table_schema(connection, tables):
             print(column)
         print("\n")
 
+# Function to read data from the database
 def read_sql_data(connection):
+
+    """
+    Fetch specific columns from the 'Matrics' table and return as a DataFrame.
+
+    Args:
+        connection (pymysql.connections.Connection): The database connection object.
+
+    Returns:
+        pd.DataFrame: DataFrame containing the retrieved data.
+    """
     query = "SELECT Likes, Comments, Shares, Reach, Engagement_Rate FROM Matrics;"
+    # Use pandas to read data from SQL and load it into a DataFrame
     datframe = pd.read_sql(query, connection)
     return datframe
-
+# Main script execution
 if __name__ == "__main__":
     load_dotenv()
     host= os.getenv('HOST')
