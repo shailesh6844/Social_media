@@ -14,5 +14,5 @@ def create_pandas_profile_report(dataframe):
         profile.to_file(output_path)
 
 if __name__ == "__main__":
-        dataframe= pd.read_csv('/Users/sachinmishra/Desktop/Social_media/Data/social_media_engagement_data.csv')
+        dataframe= pd.read_csv('C:\Users\shailesh shinde\OneDrive\Desktop\Social_media\Data\social_media_engagement_data.csv')
         create_pandas_profile_report(dataframe)
