@@ -9,7 +9,9 @@ from src.pandas_profiling import create_pandas_profile_report
 
 if __name__ == '__main__':
     
-    dataframe= pd.read_csv('/Users/sachinmishra/Desktop/Social_media/Data/social_media_engagement_data.csv')
+    #dataframe= pd.read_csv('')
+    dataframe = pd.read_csv(r'C:\Users\shailesh shinde\OneDrive\Desktop\Social_media\Data\social_media_engagement_data.csv')
+
     create_pandas_profile_report(dataframe)
     
     load_dotenv()
