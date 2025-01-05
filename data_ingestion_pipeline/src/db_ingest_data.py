@@ -71,6 +71,9 @@ if __name__ == "__main__":
     table_name= 'x'
     columns = {
             "Matrics_ID": "INT PRIMARY KEY",
+            "AudienceID": "INT",
+            "Post_id": "INT",
+            "Campaign_ID": "VARCHAR(255)",
             "Likes": "INT",
             "Comments": "INT",
             "Shares": "INT",
